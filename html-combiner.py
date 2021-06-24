@@ -5,8 +5,8 @@ PAGE_DIR = "./pages/"
 TEMPLATE_DIR = "./templates/"
 TARGET_DIR = "./docs/"
 
-INCLUDE_MARKER = "&include("
-INCLUDE_MARKER_END = ")"
+INCLUDE_MARKER = "<include "
+INCLUDE_MARKER_END = "/>"
 
 def process_dir(path: str = "") -> None:
     items = os.listdir(PAGE_DIR + path)
@@ -45,14 +45,14 @@ def apply_include(contents: str) -> str:
 
 def insert_contents(contents, new_contents):
     index_start, index_end = get_marker_indices(contents)
-    return contents[:index_start] + new_contents + contents[index_end+1:]
+    return contents[:index_start] + new_contents + contents[index_end + len(INCLUDE_MARKER_END):]
 
 
 def get_included_name(contents):
     marker_start, marker_end = get_marker_indices(contents)
     name_start = marker_start + len(INCLUDE_MARKER)
-    name_end = marker_end - len(INCLUDE_MARKER_END)
-    return contents[name_start:name_end + 1]
+    name_end = marker_end
+    return contents[name_start:name_end]
 
 
 def get_marker_indices(contents: str) -> tuple:
