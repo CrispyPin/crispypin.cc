@@ -11,19 +11,29 @@ INCLUDE_MARKER_END = ")"
 def process_dir(path: str = "") -> None:
     items = os.listdir(PAGE_DIR + path)
     for name in items:
-        if os.path.isdir(path + name):
+        if os.path.isdir(PAGE_DIR + path + name):
             process_dir(path + name + "/")
         else:
             process_file(path + name)
 
 
 def process_file(filepath: str) -> str:
+    print("processing " + filepath)
     contents = read_file(PAGE_DIR + filepath)
     while INCLUDE_MARKER in contents:
         contents = apply_include(contents)
     
+    ensure_dir(TARGET_DIR + filepath)
+
     with open(TARGET_DIR + filepath, "w") as f:
         f.write(contents)
+
+
+def ensure_dir(filepath: str):
+    i = len(filepath) - filepath[::-1].find("/")
+    dir = filepath[:i]
+    if not os.path.exists(dir):
+        os.mkdir(dir)
 
 
 def apply_include(contents: str) -> str:
