@@ -6,7 +6,7 @@ $main-item-disabled: #8b8;
 $main-bg: #181818;
 $main-page-bg: #282828;
 
-$main-color: #bfb;
+$main-color: #cff;
 
 
 body {
@@ -60,6 +60,7 @@ header {
 footer {
     grid-column: 1 / -1;
     margin: 25px;
+    text-align: center;
 }
 
 main {
@@ -68,7 +69,7 @@ main {
     background-color: $main-page-bg;
 }
 
-.visual {
+.render {
     margin: 20px;
     width: min-content;
     background-color: #000;
