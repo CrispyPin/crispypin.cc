@@ -22,7 +22,47 @@
 </nav>
     <main>
         <h1>Fractals</h1>
-        <p>this is real content i promise</p>
+        <h2>Fractal tree</h2>
+        <p>This is a fractal tree.</p>
+        <p>The tree splits into two parts, with an angle defined by the cursor's x positon. The number of iterations is defined by the first input field (which defaults to 12). Each branch is slightly smaller than its parent, as defined by the second input field. Click the canvas to freeze the image at any moment.</p>
+        <div class="demo-render" id="fractal-tree">
+            <canvas></canvas>
+            <div class="controlbar">
+                <input type="number" min=6 max=15 value=12 onchange="fractalTree.setIter(value)">
+                <input type="number" min=0.65 max=1 step=0.025 value=0.75 onchange="fractalTree.setMod(value)">
+            </div>
+        </div>
+        <h2>Mandelbrot</h2>
+        <p>The mandelbrot set is defined as the set of complex numbers for which a specific function (<i>F<sub>c</sub>(z) = z<sup>2</sup> + c</i>) stays within distance 2 from the origin when iterated from z=0.</p>
+        <div class="demo-render" id="mandelbrot">
+            <canvas></canvas>
+            <div class="controlbar">
+                <button type="button" onclick="mandelbrot.reset()">Reset</button>
+                <button type="button" onclick="mandelbrot.gpuRender()">GPU</button>
+                <input type="number" min=1 max=1000 value=256 onchange="mandelbrot.setIter(value)">
+            </div>
+        </div>
+        <h2>Multibrot set</h2>
+        <p>A multibrot set is a variant of the mandelbrot set where the functions exponent can be anything. If the exponent (third input field) is 2, you get the regular mandelbrot set.</p>
+        <div class="demo-render" id="multibrot">
+            <canvas></canvas>
+            <div class="controlbar">
+                <button type="button" onclick="multibrot.reset()">Reset</button>
+                <input type="number" min=1 max=1000 value=256 onchange="multibrot.setIter(value)">
+                <input type="number" min=0 max=32 step=0.1 value=4 onchange="multibrot.setPower(value)">
+            </div>
+        </div>
+        <h2>Julia set</h2>
+        <p>The julia set is similar to the mandelbrot set.</p>
+        <div class="demo-render" id="julia-set">
+            <canvas></canvas>
+            <div class="controlbar">
+                <button type="button" onclick="juliaSet.reset()">Reset</button>
+                <input type="number" min=8 max=1000 value=80 step=8 onchange="juliaSet.setIter(value)">
+            </div>
+        </div>
+        <script src="/libraries/gpu-browser.min.js"></script>
+        <script src="fractals.js"></script>
     </main>
     <footer>
     <p>crispypin.cc</p>

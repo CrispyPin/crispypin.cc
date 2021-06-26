@@ -52,8 +52,13 @@ header h1 {
 
 footer {
   grid-column: 1 / -1;
-  margin: 25px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   text-align: center;
+}
+
+footer p {
+  margin: 5px;
 }
 
 main {
@@ -62,7 +67,7 @@ main {
   background-color: #282828;
 }
 
-.render {
+.demo-render {
   margin: 20px;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -148,6 +153,7 @@ main {
 }
 
 .clickable, nav li, .controlbar button, .controlbar input, .scroll-reset {
+  border-radius: 4px;
   background-color: #4a4;
 }
 
@@ -172,12 +178,7 @@ main {
   bottom: 20px;
   width: 40px;
   height: 40px;
-  border-radius: 25%;
   background-image: url("uparrow.png");
   cursor: pointer;
-}
-
-.img-right {
-  float: right;
 }
 /*# sourceMappingURL=style.css.map */

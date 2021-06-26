@@ -59,8 +59,12 @@ header {
 
 footer {
     grid-column: 1 / -1;
-    margin: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     text-align: center;
+    p {
+        margin: 5px;
+    }
 }
 
 main {
@@ -69,7 +73,7 @@ main {
     background-color: $main-page-bg;
 }
 
-.render {
+.demo-render {
     margin: 20px;
     width: min-content;
     background-color: #000;
@@ -84,7 +88,7 @@ main {
     justify-content: space-evenly;
     align-content: stretch;
     flex-wrap: wrap;
-
+    
     button, input {
         @extend .clickable;
         padding: 4px 6px;
@@ -105,7 +109,7 @@ main {
         padding: 0;
         margin: 2px;
         cursor: pointer;
-
+        
         &::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -141,6 +145,7 @@ main {
 }
 
 .clickable {
+    border-radius: 4px;
     background-color: $main-item;
     &:hover {
         background-color: $main-item-hover;
@@ -163,11 +168,6 @@ main {
     bottom: 20px;
     width: 40px;
     height: 40px;
-    border-radius: 25%;
     background-image: url("uparrow.png");
     cursor: pointer;
-}
-
-.img-right {
-    float: right;
 }
