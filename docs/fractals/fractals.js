@@ -1,6 +1,6 @@
 'use strict'
-
-const gpu = new GPU();
+// I made this in school and I had to 'use strict'.
+// I no longer use JS.
 
 class FractalTree {
     constructor(id, iterations, mod) {
@@ -87,7 +87,6 @@ class Mandelbrot {
         this.ctx = this.canvas.getContext("2d");
 
         this.renderBtn = this.app.getElementsByClassName("controlbar")[0].getElementsByTagName("button")[0];
-        this.renderBtn2 = this.app.getElementsByClassName("controlbar")[0].getElementsByTagName("button")[1];
         
         this.init(minX, minY, maxX, maxY);
         this.defaultZoom = [minX, minY, maxX, maxY];
@@ -178,45 +177,6 @@ class Mandelbrot {
         this.renderBtn.textContent = `Reset ${new Date() - start}ms`;
     }
 
-    gpuRender() {
-        let start = new Date();
-
-        let kernel = gpu.createKernel(function(scaleX, scaleY, minX, minY, iter) {
-            let x0 = this.thread.x * scaleX + minX;
-            let y0 = this.thread.y * scaleY + minY;
-            let x = 0, y = 0;
-            let i = 0;
-            let x2 = 0, y2 = 0;
-
-            while (x2 + y2 < 4 && i < iter) {
-                y = 2*x*y + y0;
-                x = x2 - y2 + x0;
-                x2 = x*x;
-                y2 = y*y;
-                i++;
-            }
-            if (i != iter) {
-                this.color(0, i/iter, i/iter, 1);
-                this.color(0, i/255, i/255, 1);//i is 0?
-                this.color(this.thread.x/512, this.thread.y/512, i/255);
-                
-            } else {
-                this.color(1, 0, 0, 1);
-            }
-            //this.color(this.thread.x/512, this.thread.y/512, i/256);
-            //this.color(x0, y0, 0, 1)
-        },
-        {output:[512, 512], graphical:true, loopMaxIterations: this.iter});
-        
-        kernel(this.scaleX, this.scaleY, this.minX, this.minY, this.iter);
-
-        //let kernel = gpu.createKernel(function() {this.color(0, 0, 1);}).setOutput([512, 512]).setGraphical(true);
-        //kernel();
-
-        let result = kernel.getPixels();
-        this.ctx.putImageData(new ImageData(result, 512, 512), 0, 0);
-        this.renderBtn.textContent = `Reset ${new Date() - start}ms`;
-    }
 }
 
 class Multibrot extends Mandelbrot {

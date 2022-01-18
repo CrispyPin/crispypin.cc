@@ -12,6 +12,10 @@ body {
   min-height: 100vh;
 }
 
+a:visited {
+  color: #b8f;
+}
+
 nav {
   grid-column: 1 / -1;
 }
@@ -37,6 +41,10 @@ nav a {
   text-decoration: none;
   display: block;
   text-align: center;
+}
+
+nav a:visited {
+  color: #000;
 }
 
 header {
