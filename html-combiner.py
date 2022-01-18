@@ -38,14 +38,18 @@ def ensure_dir(filepath: str):
 
 def apply_include(contents: str) -> str:
     included_file = get_included_name(contents)
-    
-    new_contents = read_file(TEMPLATE_DIR + included_file)
-    return insert_contents(contents, new_contents)
+    inserted_text = read_file(TEMPLATE_DIR + included_file)
 
-
-def insert_contents(contents, new_contents):
     index_start, index_end = get_marker_indices(contents)
-    return contents[:index_start] + new_contents + contents[index_end + len(INCLUDE_MARKER_END):]
+    index_end += len(INCLUDE_MARKER_END)
+
+    prefix = contents[:index_start]
+    suffix = contents[index_end:]
+
+    indent = prefix.split("\n")[-1]
+    inserted_text = inserted_text.replace("\n", "\n" + indent)
+
+    return prefix + inserted_text + suffix
 
 
 def get_included_name(contents):
