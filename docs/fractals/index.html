@@ -1,80 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    	<meta charset="UTF-8">
+		<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/style.css">
 	<link rel="icon" type="image/x-icon" href="/icons/favicon.png">
 
-    <title>CrispyPin.cc - Fractals</title>
+	<title>CrispyPin.cc - Fractals</title>
 </head>
 <body>
-    <header>
-    <a href="/" id="logo"><img src="/logo.png" alt=""></a>
-</header>
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/games/">Games</a></li>
-        <li><a href="/fractals/">Fractals</a></li>
-        <li><a href="/blender/">Blender stuff</a></li>
-        <li><a href="https://crispypin.github.io/gol-wallpaper">Game of Life</a></li>
-    </ul>
-</nav>
-    <main>
-        <h1>Fractals</h1>
-        <p>This page is a collection of fractals renderers I made in JS for a school assignment back in 2020. Please note that I don't use JS anymore.</p>
-        <h2>Fractal tree</h2>
-        <p>The splitting angle is defined by the mouses x position. The number of iterations is set in the first input field (default is 12). Each branch is slightly smaller than its parent, the factor is the second input field. Click the canvas to pause/resume the image.</p>
-        <div class="demo-render" id="fractal-tree">
-            <canvas></canvas>
-            <div class="controlbar">
-                <input type="number" min=6 max=15 value=12 onchange="fractalTree.setIter(value)">
-                <input type="number" min=0.65 max=1 step=0.025 value=0.75 onchange="fractalTree.setMod(value)">
-            </div>
-        </div>
-        <h2>Mandelbrot set</h2>
-        <a href="https://en.wikipedia.org/wiki/Mandelbrot_set">Wikipedia page</a>
-        <p>You can click to zoom and set the iteration count in the input field.</p>
-        <div class="demo-render" id="mandelbrot">
-            <canvas></canvas>
-            <div class="controlbar">
-                <button type="button" onclick="mandelbrot.reset()">Reset</button>
-                <input type="number" min=1 max=1000 value=256 onchange="mandelbrot.setIter(value)">
-            </div>
-        </div>
-        <h2>Multibrot set</h2>
-        <a href="https://en.wikipedia.org/wiki/Multibrot_set">Wikipedia page</a>
-        <p>You can click to zoom and set the iteration count in the input field. The second input controls the exponent. This is quite slow to render.</p>
-        <div class="demo-render" id="multibrot">
-            <canvas></canvas>
-            <div class="controlbar">
-                <button type="button" onclick="multibrot.reset()">Render</button>
-                <input type="number" min=1 max=1000 value=256 onchange="multibrot.setIter(value)">
-                <input type="number" min=0 max=32 step=0.1 value=4 onchange="multibrot.setPower(value)">
-            </div>
-        </div>
-        <h2>Julia set</h2>
-        <a href="https://en.wikipedia.org/wiki/Julia_set">Wikipedia page</a>
-        <p>You can set the iteration count in the input field.</p>
-        <div class="demo-render" id="julia-set">
-            <canvas></canvas>
-            <div class="controlbar">
-                <button type="button" onclick="juliaSet.reset()">Reset</button>
-                <input type="number" min=8 max=1000 value=80 step=8 onchange="juliaSet.setIter(value)">
-            </div>
-        </div>
-        <script src="fractals.js"></script>
-    </main>
-    <footer>
-	<p>crispypin.cc</p>
-	<div class="links">
-		<a href="https://github.com/CrispyPin"><img src="/icons/github.png" alt="" width=32px> </a>
-		<a href="https://crispypin.itch.io/"><img src="/icons/itchio.svg" alt="" width=32px> </a>
-		<a href="https://twitter.com/CrispyPin42"><img src="/icons/twitter.png" alt="" width=32px> </a>
-		<a href="https://www.youtube.com/channel/UCFW1QTsbFgux8VrduCz_ckQ"><img src="/icons/youtube.png" alt="" width=32px> </a>
-	</div>
-</footer>
+		<header>
+		<a href="/" id="logo"><img src="/logo.png" alt=""></a>
+	</header>
+		<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/games/">Games</a></li>
+			<li><a href="/fractals/">Fractals</a></li>
+			<li><a href="/blender/">Blender stuff</a></li>
+			<li><a href="https://crispypin.github.io/gol-wallpaper">Game of Life</a></li>
+		</ul>
+	</nav>
+	<main>
+		<h1>Fractals</h1>
+		<p>This page is a collection of fractals renderers I made in JS for a school assignment back in 2020. Please note that I don't use JS anymore.</p>
+		<h2>Fractal tree</h2>
+		<p>The splitting angle is defined by the mouses x position. The number of iterations is set in the first input field (default is 12). Each branch is slightly smaller than its parent, the factor is the second input field. Click the canvas to pause/resume the image.</p>
+		<div class="demo-render" id="fractal-tree">
+			<canvas></canvas>
+			<div class="controlbar">
+				<input type="number" min=6 max=15 value=12 onchange="fractalTree.setIter(value)">
+				<input type="number" min=0.65 max=1 step=0.025 value=0.75 onchange="fractalTree.setMod(value)">
+			</div>
+		</div>
+		<h2>Mandelbrot set</h2>
+		<a href="https://en.wikipedia.org/wiki/Mandelbrot_set">Wikipedia page</a>
+		<p>You can click to zoom and set the iteration count in the input field.</p>
+		<div class="demo-render" id="mandelbrot">
+			<canvas></canvas>
+			<div class="controlbar">
+				<button type="button" onclick="mandelbrot.reset()">Reset</button>
+				<input type="number" min=1 max=1000 value=256 onchange="mandelbrot.setIter(value)">
+			</div>
+		</div>
+		<h2>Multibrot set</h2>
+		<a href="https://en.wikipedia.org/wiki/Multibrot_set">Wikipedia page</a>
+		<p>You can click to zoom and set the iteration count in the input field. The second input controls the exponent. This is quite slow to render.</p>
+		<div class="demo-render" id="multibrot">
+			<canvas></canvas>
+			<div class="controlbar">
+				<button type="button" onclick="multibrot.reset()">Render</button>
+				<input type="number" min=1 max=1000 value=256 onchange="multibrot.setIter(value)">
+				<input type="number" min=0 max=32 step=0.1 value=4 onchange="multibrot.setPower(value)">
+			</div>
+		</div>
+		<h2>Julia set</h2>
+		<a href="https://en.wikipedia.org/wiki/Julia_set">Wikipedia page</a>
+		<p>You can set the iteration count in the input field.</p>
+		<div class="demo-render" id="julia-set">
+			<canvas></canvas>
+			<div class="controlbar">
+				<button type="button" onclick="juliaSet.reset()">Reset</button>
+				<input type="number" min=8 max=1000 value=80 step=8 onchange="juliaSet.setIter(value)">
+			</div>
+		</div>
+		<script src="fractals.js"></script>
+	</main>
+		<footer>
+		<p>Copyright © 2022 - CrispyPin</p>
+		<div class="links">
+			<a href="https://github.com/CrispyPin"><img src="/icons/github.png" alt="" width=32px></a>
+			<a href="https://crispypin.itch.io/"><img src="/icons/itchio.svg" alt="" width=32px></a>
+			<a href="https://twitter.com/CrispyPin42"><img src="/icons/twitter.png" alt="" width=32px></a>
+			<a href="https://www.youtube.com/channel/UCFW1QTsbFgux8VrduCz_ckQ"><img src="/icons/youtube.png" alt="" width=32px></a>
+		</div>
+	</footer>
 </body>
 </html>
