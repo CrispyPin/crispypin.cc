@@ -6,7 +6,7 @@ $main-item-disabled: #8b8;
 $main-bg: #181818;
 $main-page-bg: #282828;
 
-$main-color: #cff;
+$main-color: #dff;
 
 
 body {
@@ -26,6 +26,14 @@ body {
 
 a:visited { 
 	color: #b8f;
+}
+
+.title-link a {
+	text-decoration: none;
+	color: $main-color;
+	&:visited {
+		color: $main-color;
+	}
 }
 
 nav {
