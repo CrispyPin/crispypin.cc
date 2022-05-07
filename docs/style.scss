@@ -6,7 +6,7 @@ $main-item-disabled: #8b8;
 $main-bg: #181818;
 $main-page-bg: #282828;
 
-$main-color: #dff;
+$main-color: rgb(255, 255, 255);
 
 
 body {
@@ -17,11 +17,10 @@ body {
 	display: grid;
 	grid-template-rows: 50px auto 1fr auto;
 
-	grid-template-columns: 20px 1fr 20px;
+	grid-template-columns: 80px 1fr 80px;
 	
 	margin: 0;
 	min-height: 100vh;
-
 }
 
 a:visited { 
@@ -83,7 +82,8 @@ footer {
 }
 
 main {
-	padding: 0 20px;
+	padding: 0 150px 40px ;
+	margin: 5px 100px;
 	grid-column: 2 / -2;
 	background-color: $main-page-bg;
 }
@@ -115,52 +115,16 @@ main {
 		flex-grow: 1;
 		margin: 2px;
 	}    
-	.slider {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		outline: none;
-		border-radius: 0;
-		height: 25px;
-		padding: 0;
-		margin: 2px;
-		cursor: pointer;
-		
-		&::-webkit-slider-thumb {
-			-webkit-appearance: none;
-			appearance: none;
-			border-radius: 1px;
-			width: 25px;
-			height: 25px;
-			background-color: $main-item-active;
-			margin: 0;
-			border-radius: 0;
-			border: 1px solid #000;
-		}
-		&::-moz-range-thumb {
-			/*TODO make this look the same as on chrome*/
-			-moz-appearance: none;
-			width: 25px;
-			height: 100%;
-			background-color: $main-item-active;
-			margin: 0;
-			padding: 0;
-			border-radius: 0;
-			border: 1px solid #000;
-		}
-	}
 	label {
 		background-color: $main-bg;
 		color: #fb8;
 		margin: 2px;
 		font-family: 'Consolas', 'Courier New', Courier, monospace;
 	}
-	.play-button {
-		flex-basis: 35%;
-	}
 }
 
 .clickable {
-	border-radius: 4px;
+	border-radius: 2px;
 	background-color: $main-item;
 	&:hover {
 		background-color: $main-item-hover;
@@ -176,13 +140,3 @@ main {
 	}
 }
 
-.scroll-reset {
-	@extend .clickable;
-	position: fixed;
-	right: 20px;
-	bottom: 20px;
-	width: 40px;
-	height: 40px;
-	background-image: url("uparrow.png");
-	cursor: pointer;
-}
