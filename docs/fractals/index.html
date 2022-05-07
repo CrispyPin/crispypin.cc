@@ -7,23 +7,80 @@
 	<link rel="stylesheet" href="/style.css">
 	<link rel="icon" type="image/x-icon" href="/media/icons/favicon.png">
 	<title>Fractals</title>
+	<style>
+		.demo-render {
+			margin: 20px;
+			width: -webkit-min-content;
+			width: -moz-min-content;
+			width: min-content;
+			background-color: #000;
+		}
+
+		.controlbar {
+			background-color: #181818;
+			padding: 2px 5px;
+			height: -webkit-max-content;
+			height: -moz-max-content;
+			height: max-content;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: space-evenly;
+				-ms-flex-pack: space-evenly;
+					justify-content: space-evenly;
+			-ms-flex-line-pack: stretch;
+				align-content: stretch;
+			-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+		}
+
+		.controlbar button, .controlbar input {
+			padding: 4px 6px;
+			height: 25px;
+			border: 1px solid #000;
+			border: 0;
+			cursor: pointer;
+			-webkit-box-flex: 1;
+				-ms-flex-positive: 1;
+					flex-grow: 1;
+			margin: 2px;
+		}
+
+		.controlbar label {
+			background-color: #181818;
+			color: #fb8;
+			margin: 2px;
+			font-family: 'Consolas', 'Courier New', Courier, monospace;
+		}
+
+		.clickable, nav li, .controlbar button, .controlbar input {
+			border-radius: 2px;
+			background-color: #4a4;
+		}
+
+		.clickable:hover, nav li:hover, .controlbar button:hover, .controlbar input:hover {
+			background-color: #4af;
+		}
+
+		.clickable:active, nav li:active, .controlbar button:active, .controlbar input:active {
+			background-color: #46c;
+		}
+
+		.clickable:disabled, nav li:disabled, .controlbar button:disabled, .controlbar input:disabled {
+			background-color: #8b8;
+			text-decoration: line-through;
+			color: #000;
+			cursor: default;
+		}
+	</style>
 </head>
 <body>
 	<header>
-		<a href="/" id="logo"><img src="/logo.png" alt=""></a>
+		<a href="/" id="logo"><img src="/icons/logo.png" alt=""></a>
 	</header>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/projects/">Projects</a></li>
-			<li><a href="/blender/">Blender</a></li>
-			<li><a href="/fractals/">Fractals</a></li>
-			<li><a href="https://crispypin.itch.io/">Games</a></li>
-		</ul>
-	</nav>
 	<main>
 		<h1>Fractals</h1>
-		<p>This page is a collection of fractal renderers I made in JS for a school assignment back in 2020. Please note that I don't use JS any more.</p>
+		<p>This page is a collection of fractal renderers I made in JS for a school assignment back in 2020.</p>
 		<h2>Fractal tree</h2>
 		<p>The splitting angle is defined by the mouses x position. The number of iterations is set in the first input field (default is 12). Each branch is slightly smaller than its parent, the factor is the second input field. Click the canvas to pause/resume the image.</p>
 		<div class="demo-render" id="fractal-tree">
@@ -69,9 +126,9 @@
 	<footer>
 		<p>Copyright © 2022 - CrispyPin</p>
 		<div class="links">
-			<a href="https://github.com/CrispyPin"><img src="/media/icons/github.png" alt="" width=32px></a>
-			<a href="https://crispypin.itch.io/"><img src="/media/icons/itch.io.svg" alt="" width=32px></a>
-			<a href="https://www.youtube.com/channel/UCFW1QTsbFgux8VrduCz_ckQ"><img src="/media/icons/youtube.png" alt="" width=32px></a>
+			<a href="https://github.com/CrispyPin"><img src="/icons/github.png" alt="" width=32px></a>
+			<a href="https://crispypin.itch.io/"><img src="/icons/itch.io.svg" alt="" width=32px></a>
+			<a href="https://www.youtube.com/CrispyPin42"><img src="/icons/youtube.png" alt="" width=32px></a>
 		</div>
 	</footer>
 </body>

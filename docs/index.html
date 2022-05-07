@@ -10,27 +10,64 @@
 </head>
 <body>
 	<header>
-		<a href="/" id="logo"><img src="/logo.png" alt=""></a>
+		<a href="/" id="logo"><img src="/icons/logo.png" alt=""></a>
 	</header>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/projects/">Projects</a></li>
-			<li><a href="/blender/">Blender</a></li>
-			<li><a href="/fractals/">Fractals</a></li>
-			<li><a href="https://crispypin.itch.io/">Games</a></li>
-		</ul>
-	</nav>
 	<main>
 		<h1>Hello!</h1>
-		<p>Welcome to my corner of the internet. I use this page to showcase some of my interesting projects in an easier to see way compared to just github. (This is very much a WIP)</p>
+		<p>Welcome to my corner of the internet. I use this page to showcase some of my interesting projects in an easier to see way compared to just github.</p>
+
+		<section id="voxels">
+			<h2><a href="/voxels">Voxel engine in godot-rust</a></h2>
+			<a href="https://github.com/CrispyPin/gd-voxel-rs">https://github.com/CrispyPin/gd-voxel-rs</a>
+			<p>
+				I am making a voxel engine in rust to learn rust and godot-rust as well as explore voxel systems.
+			</p>
+			<video src="/voxels/demo.mp4" controls height="320">video not supported :(</video>
+			<p>Demo of fast terrain generation</p>
+		</section>
+
+		<section id="ovr-utils">
+			<h2 class="title-link"><a href="#ovr-utils">OVR Utils</a></h2>
+			<a href="https://github.com/CrispyPin/ovr-utils">https://github.com/CrispyPin/ovr-utils</a>
+			<p>
+				OVR Utils is a VR overlay application that has some useful tools for SteamVR. I have been working on it on and off since May 2021.
+			</p>
+			<p>
+				I wanted an overlay that could tell me the time without having to open the steam dashboard, and to see the battery levels of my controllers easily, but couldn't find one for free that also had linux support. So I decided to create my own, and also wrote down a long list of other useful tools. So far only a few of these have been implemented, such as the image overlay and the keyboard.	
+			</p>
+		</section>
+
+		<section id="blender">	
+			<h2><a href="/blender">Blender creations</a></h2>
+			<p>I have been using Blender since around august 2020 on and off, and did a course in it 2021, which boosted my motivation a lot. I just like to make art in it and of course use it for game jams.</p>
+			<img src="/blender/shork_wallpaper_preview.png" alt="">
+		</section>
+
+		<section id="voxel-raymarch">	
+			<h2 class="title-link"><a href="#voxel-raymarch">Raymarched voxel rendering</a></h2>
+			<a href="https://github.com/CrispyPin/voxel-raymarcher">https://github.com/CrispyPin/voxel-raymarcher</a>
+			<img src="/projects/raymarched-voxels.png" alt="">
+		</section>
+		
+		<section id="gol-wallpaper">
+			<h2><a href="https://gol.crispypin.cc/">Game of life wallpaper</a></h2>
+			<p>Source: <a href="https://github.com/CrispyPin/gol-wallpaper">https://github.com/CrispyPin/gol-wallpaper</a></p>
+			<p>See live here: <a href="https://gol.crispypin.cc/?cellsize=5&time=2&margin=0&populate=true">gol.crispypin.cc</a></p>
+			<img src="/projects/gol.png" alt="">
+		</section>
+
+		<section id="fractals">
+			<h2><a href="/fractals">Fractals</a></h2>
+			While I was learning web development and javascript I made a page with fractals. I thought it was interesting enough to keep here.
+		</section>
+
 	</main>
 	<footer>
 		<p>Copyright © 2022 - CrispyPin</p>
 		<div class="links">
-			<a href="https://github.com/CrispyPin"><img src="/media/icons/github.png" alt="" width=32px></a>
-			<a href="https://crispypin.itch.io/"><img src="/media/icons/itch.io.svg" alt="" width=32px></a>
-			<a href="https://www.youtube.com/channel/UCFW1QTsbFgux8VrduCz_ckQ"><img src="/media/icons/youtube.png" alt="" width=32px></a>
+			<a href="https://github.com/CrispyPin"><img src="/icons/github.png" alt="" width=32px></a>
+			<a href="https://crispypin.itch.io/"><img src="/icons/itch.io.svg" alt="" width=32px></a>
+			<a href="https://www.youtube.com/CrispyPin42"><img src="/icons/youtube.png" alt="" width=32px></a>
 		</div>
 	</footer>
 </body>
