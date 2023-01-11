@@ -8,6 +8,7 @@ TARGET_DIR = "./docs/"
 INCLUDE_MARKER = "<include "
 INCLUDE_MARKER_END = "/>"
 
+
 def process_dir(path: str = "") -> None:
     items = os.listdir(PAGE_DIR + path)
     for name in items:
@@ -17,12 +18,12 @@ def process_dir(path: str = "") -> None:
             process_file(path + name)
 
 
-def process_file(filepath: str) -> str:
+def process_file(filepath: str) -> None:
     print("processing " + filepath)
     contents = read_file(PAGE_DIR + filepath)
     while INCLUDE_MARKER in contents:
         contents = apply_include(contents)
-    
+
     ensure_dir(TARGET_DIR + filepath)
 
     with open(TARGET_DIR + filepath, "w") as f:
@@ -61,7 +62,7 @@ def get_included_name(contents):
 
 def get_marker_indices(contents: str) -> tuple:
     index_start = contents.find(INCLUDE_MARKER)
-    index_end   = contents.find(INCLUDE_MARKER_END, index_start)
+    index_end = contents.find(INCLUDE_MARKER_END, index_start)
     return (index_start, index_end)
 
 
@@ -70,7 +71,7 @@ def read_file(filepath: str):
     with open(filepath, "r") as f:
         contents = f.read()
     return contents
-    
+
 
 if __name__ == "__main__":
     process_dir()
