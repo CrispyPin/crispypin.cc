@@ -57,7 +57,7 @@ def get_included_name(contents):
     marker_start, marker_end = get_marker_indices(contents)
     name_start = marker_start + len(INCLUDE_MARKER)
     name_end = marker_end
-    return contents[name_start:name_end]
+    return contents[name_start:name_end].strip()
 
 
 def get_marker_indices(contents: str) -> tuple:

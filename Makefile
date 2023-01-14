@@ -1,2 +1,2 @@
 default:
-	python3 html-combiner.py
+	./html-combiner.py
