@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<include meta.html/>
+	<include meta.html />
 	<title>Fractals</title>
 	<style>
 		.demo-render {
@@ -22,23 +23,24 @@
 			display: -ms-flexbox;
 			display: flex;
 			-webkit-box-pack: space-evenly;
-				-ms-flex-pack: space-evenly;
-					justify-content: space-evenly;
+			-ms-flex-pack: space-evenly;
+			justify-content: space-evenly;
 			-ms-flex-line-pack: stretch;
-				align-content: stretch;
+			align-content: stretch;
 			-ms-flex-wrap: wrap;
-				flex-wrap: wrap;
+			flex-wrap: wrap;
 		}
 
-		.controlbar button, .controlbar input {
+		.controlbar button,
+		.controlbar input {
 			padding: 4px 6px;
 			height: 25px;
 			border: 1px solid #000;
 			border: 0;
 			cursor: pointer;
 			-webkit-box-flex: 1;
-				-ms-flex-positive: 1;
-					flex-grow: 1;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
 			margin: 2px;
 		}
 
@@ -49,20 +51,32 @@
 			font-family: 'Consolas', 'Courier New', Courier, monospace;
 		}
 
-		.clickable, nav li, .controlbar button, .controlbar input {
+		.clickable,
+		nav li,
+		.controlbar button,
+		.controlbar input {
 			border-radius: 2px;
 			background-color: #4a4;
 		}
 
-		.clickable:hover, nav li:hover, .controlbar button:hover, .controlbar input:hover {
+		.clickable:hover,
+		nav li:hover,
+		.controlbar button:hover,
+		.controlbar input:hover {
 			background-color: #4af;
 		}
 
-		.clickable:active, nav li:active, .controlbar button:active, .controlbar input:active {
+		.clickable:active,
+		nav li:active,
+		.controlbar button:active,
+		.controlbar input:active {
 			background-color: #46c;
 		}
 
-		.clickable:disabled, nav li:disabled, .controlbar button:disabled, .controlbar input:disabled {
+		.clickable:disabled,
+		nav li:disabled,
+		.controlbar button:disabled,
+		.controlbar input:disabled {
 			background-color: #8b8;
 			text-decoration: line-through;
 			color: #000;
@@ -70,13 +84,16 @@
 		}
 	</style>
 </head>
+
 <body>
-	<include header.html/>
+	<include header.html />
 	<main>
 		<h1>Fractals</h1>
 		<p>This page is a collection of fractal renderers I made in JS for a school assignment back in 2020.</p>
 		<h2>Fractal tree</h2>
-		<p>The splitting angle is defined by the mouses x position. The number of iterations is set in the first input field (default is 12). Each branch is slightly smaller than its parent, the factor is the second input field. Click the canvas to pause/resume the image.</p>
+		<p>The splitting angle is defined by the mouses x position. The number of iterations is set in the first input
+			field (default is 12). Each branch is slightly smaller than its parent, the factor is the second input
+			field. Click the canvas to pause/resume the image.</p>
 		<div class="demo-render" id="fractal-tree">
 			<canvas></canvas>
 			<div class="controlbar">
@@ -91,17 +108,18 @@
 			<canvas></canvas>
 			<div class="controlbar">
 				<button type="button" onclick="mandelbrot.reset()">Reset</button>
-				<input type="number" min=1 max=1000 value=256 onchange="mandelbrot.setIter(value)">
+				<input type="number" min=1 max=256 value=48 onchange="mandelbrot.setIter(value)">
 			</div>
 		</div>
 		<h2>Multibrot set</h2>
 		<a href="https://en.wikipedia.org/wiki/Multibrot_set">Wikipedia page</a>
-		<p>You can click to zoom and set the iteration count in the input field. The second input controls the exponent. This is quite slow to render.</p>
+		<p>You can click to zoom and set the iteration count in the input field. The second input controls the exponent.
+			This is quite slow to render.</p>
 		<div class="demo-render" id="multibrot">
 			<canvas></canvas>
 			<div class="controlbar">
 				<button type="button" onclick="multibrot.reset()">Render</button>
-				<input type="number" min=1 max=1000 value=256 onchange="multibrot.setIter(value)">
+				<input type="number" min=1 max=256 value=48 onchange="multibrot.setIter(value)">
 				<input type="number" min=0 max=32 step=0.1 value=4 onchange="multibrot.setPower(value)">
 			</div>
 		</div>
@@ -117,6 +135,7 @@
 		</div>
 		<script src="fractals.js"></script>
 	</main>
-	<include footer.html/>
+	<include footer.html />
 </body>
+
 </html>
